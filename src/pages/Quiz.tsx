@@ -121,14 +121,8 @@ function Quiz() {
 
       setResult(response.data.data);
 
-      // Only increment play count for authenticated users
-      const token = localStorage.getItem("auth-storage");
-      if (token) {
-        const authData = JSON.parse(token);
-        if (authData?.state?.token) {
-          await addPlayCount(id!);
-        }
-      }
+      // Increment play count for all users (both authenticated and public)
+      await addPlayCount(id!);
 
       setFinished(true);
     } catch (err) {
