@@ -194,7 +194,7 @@ export default function MyProjectsPage() {
                       size="sm"
                       className="h-7"
                       onClick={() => {
-                        navigate(`/quiz/play/${project.id}`);
+                        navigate(`/anagram/play/${project.id}`);
                       }}
                     >
                       <Play />
@@ -206,7 +206,7 @@ export default function MyProjectsPage() {
                     size="sm"
                     className="h-7"
                     onClick={() => {
-                      navigate(`/quiz/edit/${project.id}`);
+                      navigate(`/anagram/edit/${project.id}`);
                     }}
                   >
                     <Edit />

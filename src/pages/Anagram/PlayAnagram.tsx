@@ -31,7 +31,6 @@ interface BackendGamePlayData {
   description: string;
   thumbnail_image: string;
   is_published: boolean;
-  score_per_question: number;
   questions: BackendQuestion[];
 }
 
@@ -47,7 +46,6 @@ interface GamePlayData {
   game_id: string;
   name: string;
   questions: Question[];
-  score_per_question: number;
 }
 
 const PlayAnagram = () => {
@@ -116,7 +114,6 @@ const PlayAnagram = () => {
       const transformedData: GamePlayData = {
         game_id: backendData.id,
         name: backendData.name,
-        score_per_question: backendData.score_per_question || 100,
         questions: backendData.questions.map((q) => ({
           question_id: q.question_id,
           correct_word: q.correct_word,
@@ -189,7 +186,7 @@ const PlayAnagram = () => {
       const letterCount = currentQuestion.correct_word.length;
 
       // Hitung skor: x2 per huruf (karena perfect - no hint)
-      const points = letterCount * gameData.score_per_question * 2;
+      const points = letterCount * 2;
 
       setEarnedScore(points);
       setScore((prev) => prev + points);

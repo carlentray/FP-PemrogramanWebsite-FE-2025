@@ -10,8 +10,9 @@ import CreateProject from "./pages/CreateProject";
 import EditQuiz from "./pages/EditQuiz";
 import Quiz from "./pages/Quiz";
 import ProtectedRoute from "./routes/ProtectedRoutes";
-import CreateAnagram from "./pages/anagram/CreateAnagram";
-import PlayAnagram from "./pages/anagram/PlayAnagram";
+import CreateAnagram from "./pages/Anagram/CreateAnagram";
+import PlayAnagram from "./pages/Anagram/PlayAnagram";
+import EditAnagram from "./pages/Anagram/EditAnagram";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/create-quiz" element={<CreateQuiz />} />
           <Route path="/quiz/edit/:id" element={<EditQuiz />} />
           <Route path="/create-anagram" element={<CreateAnagram />} />
+          <Route path="/anagram/edit/:id" element={<EditAnagram />} />
         </Route>
       </Routes>
     </>

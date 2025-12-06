@@ -1,4 +1,4 @@
-import React, { useState, type ChangeEvent } from "react";
+import { useState, type ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -35,7 +35,6 @@ const CreateAnagram = () => {
   const [gameInfo, setGameInfo] = useState({
     name: "",
     description: "",
-    score_per_question: 100,
     is_publish_immediately: false,
     is_question_randomized: false,
   });
@@ -125,10 +124,6 @@ const CreateAnagram = () => {
 
       formData.append("name", gameInfo.name);
       formData.append("description", gameInfo.description);
-      formData.append(
-        "score_per_question",
-        gameInfo.score_per_question.toString(),
-      );
       formData.append(
         "is_publish_immediately",
         gameInfo.is_publish_immediately.toString(),
@@ -386,22 +381,6 @@ const CreateAnagram = () => {
                 </div>
 
                 <hr />
-
-                {/* Score */}
-                <div className="space-y-2">
-                  <Label>Score per Question</Label>
-                  <Input
-                    type="number"
-                    min={10}
-                    value={gameInfo.score_per_question}
-                    onChange={(e) =>
-                      setGameInfo({
-                        ...gameInfo,
-                        score_per_question: parseInt(e.target.value) || 0,
-                      })
-                    }
-                  />
-                </div>
 
                 {/* Toggles */}
                 <div className="flex items-center justify-between">
