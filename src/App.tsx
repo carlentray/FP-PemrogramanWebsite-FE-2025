@@ -10,6 +10,9 @@ import CreateProject from "./pages/CreateProject";
 import EditQuiz from "./pages/EditQuiz";
 import Quiz from "./pages/Quiz";
 import ProtectedRoute from "./routes/ProtectedRoutes";
+import CreateAnagram from "./pages/anagram/CreateAnagram";
+import PlayAnagram from "./pages/anagram/PlayAnagram";
+import EditAnagram from "./pages/anagram/EditAnagram";
 
 // 📌 TAMBAHAN 1: Import Komponen Game Pair or No Pair
 import PairOrNoPairGame from "./pages/pair-or-no-pair";
@@ -24,6 +27,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/sandbox" element={<Sandbox />} />
         <Route path="/quiz/play/:id" element={<Quiz />} />
+        <Route path="/anagram/play/:id" element={<PlayAnagram />} />
         <Route
           path="/pair-or-no-pair/play/:gameId"
           element={<PairOrNoPairGame />}
@@ -39,6 +43,8 @@ function App() {
             element={<CreatePairOrNoPair />}
           />
           <Route path="/quiz/edit/:id" element={<EditQuiz />} />
+          <Route path="/create-anagram" element={<CreateAnagram />} />
+          <Route path="/anagram/edit/:id" element={<EditAnagram />} />
         </Route>
       </Routes>
     </>
