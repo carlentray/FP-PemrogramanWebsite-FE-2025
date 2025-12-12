@@ -39,7 +39,10 @@ function App() {
           path="/pair-or-no-pair/play/:gameId"
           element={<PairOrNoPairGame />}
         />
-        <Route path="/sliding-puzzle/play/:id" element={<PlaySlidingPuzzle />} />
+        <Route
+          path="/sliding-puzzle/play/:id"
+          element={<PlaySlidingPuzzle />}
+        />
 
         <Route element={<ProtectedRoute />}>
           <Route path="/profile" element={<ProfilePage />} />
@@ -61,8 +64,14 @@ function App() {
           />
           <Route path="/create-anagram" element={<CreateAnagram />} />
           <Route path="/anagram/edit/:id" element={<EditAnagram />} />
-          <Route path="/create-sliding-puzzle" element={<CreateSlidingPuzzle />} />
-          <Route path="/sliding-puzzle/edit/:id" element={<EditSlidingPuzzle />} />
+          <Route
+            path="/create-sliding-puzzle"
+            element={<CreateSlidingPuzzle />}
+          />
+          <Route
+            path="/sliding-puzzle/edit/:id"
+            element={<EditSlidingPuzzle />}
+          />
         </Route>
       </Routes>
     </>
